@@ -1,0 +1,65 @@
+body {
+    font-family: 'Verdana', Arial, monospace;
+    background-color: seagreen;
+    color: white;
+        background-image: url("PSYCHOLOGY.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    
+}
+
+header {
+    background-color: lightseagreen;
+    color: white;
+    padding: 60px;
+    text-align: center;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style-type: upper-alpha;
+    margin: 6;
+    padding: 6;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 100px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+section {
+    padding: 160px;
+    margin: 80px;
+    background-color: lightseagreen;
+    box-shadow: 0 4px 80px black (0, 0, 0, 0.1);
+    font-size: 20px;
+    
+}
+
+h1, h2 {
+    font-family: 'Optima', monospace;
+    color: white;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: lower-roman;
+    margin-left: 20px;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
