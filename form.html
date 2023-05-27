@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <title>Сайт о психологическом благополучии</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+       
+        <audio preload="auto" src="softy.m4a" loop="true" autobuffer>
+            </audio>
+            
+            <script>
+            function setCookie(c_name,value,exdays)
+            {
+                var exdate=new Date();
+                exdate.setDate(exdate.getDate() + exdays);
+                var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+                document.cookie=c_name + "=" + c_value;
+            }
+            
+            function getCookie(c_name)
+            {
+                var i,x,y,ARRcookies=document.cookie.split(";");
+                for (i=0;i<ARRcookies.length;i++)
+                {
+                  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+                  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+                  x=x.replace(/^\s+|\s+$/g,"");
+                  if (x==c_name)
+                    {
+                    return unescape(y);
+                    }
+                  }
+            }
+            
+            var song = document.getElementsByTagName('audio')[0];
+            var played = false;
+            var tillPlayed = getCookie('timePlayed');
+            function update()
+            {
+                if(!played){
+                    if(tillPlayed){
+                    song.currentTime = tillPlayed;
+                    song.play();
+                    played = true;
+                    }
+                    else {
+                            song.play();
+                            played = true;
+                    }
+                }
+            
+                else {
+                setCookie('timePlayed', song.currentTime);
+                }
+            }
+            setInterval(update,1000);
+            </script>
+
+    </head>
+<body>
+    <header>
+        <h1>PSYCHOSU</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#strategies">Стратегии</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="booking">
+        <h2>Запись на консультацию:</h2>
+        <form action="booking.php" method="post">
+            <input type="checkbox" name="needRequired" id="needRequired" value="1" />
+            Я хочу остаться анонимным; Мне нужно обсудить свою проблему онлайн
+            <br><br>
+
+            <label for="email">E-Mail:</label><br>
+            <input type="email" id="Name_1" name="email" required><br>
+
+            <label for="first_name">Имя:</label><br>
+            <input type="text" id="Name_2" name="first_name" required><br>
+            
+            <label for="last_name">Фамилия:</label><br>
+            <input type="text" id="Name_3" name="last_name" required pattern="[a-zA-Z]+"><br><br>
+    
+            <label for="message">Опишите свою проблему:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+            
+            <label for="phone">Телефон:</label><br>
+            <input type="tel" id="Name_4" name="phone" required pattern="8\d{10}"><br>
+            
+            <label for="occupation">Дополнительная информация (Необязательно):</label><br>
+            <input type="text" name="addinf"><br>
+
+            <label for="date_expired">Дата записи:</label><br>
+            <input type="date" name="date_expires" id="datepicker" required><br><br>
+            
+            <script>
+              // Get today's date
+              var today = new Date().toISOString().split('T')[0];
+              
+              // Set the minimum date for the datepicker to today
+              document.getElementById("datepicker").min = today;
+            </script>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <button type="submit">Отправить</button>
+
+            <script>
+                document.getElementById("needRequired").addEventListener('change', function(){
+                    if(this.checked)
+                    { document.getElementById("Name_1").required =  false; 
+                }
+            })
+            document.getElementById("needRequired").addEventListener('change', function(){
+                    if(this.checked)
+                    { document.getElementById("Name_2").required =  false; 
+                }
+            })
+            document.getElementById("needRequired").addEventListener('change', function(){
+                    if(this.checked)
+                    { document.getElementById("Name_3").required =  false; 
+                }
+            })
+            document.getElementById("needRequired").addEventListener('change', function(){
+                    if(this.checked)
+                    { document.getElementById("Name_4").required =  false; 
+                }
+            })
+            </script>
+        </form>
+    </section>
+    
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Если у вас ещё остались вопросы или комментарии, пожалуйста, свяжитесь с нами:</p>
+        <p>Телефон: 8 747 376 9625</p>
+        <p>E-Mail: psychosunet@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>Все права защищены &copy; 2023 PSYCHOSU.net</p>
+    </footer>
+</body>
+</html>
