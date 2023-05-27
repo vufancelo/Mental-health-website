@@ -1,65 +1,198 @@
+/* main.css */
+
+/* Global Styles */
 body {
-    font-family: 'Verdana', Arial, monospace;
-    background-color: seagreen;
-    color: white;
-        background-image: url("PSYCHOLOGY.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    
-}
-
-header {
-    background-color: lightseagreen;
-    color: white;
-    padding: 60px;
-    text-align: center;
-    font-size: 30px;
-}
-
-nav ul {
-    list-style-type: upper-alpha;
-    margin: 6;
-    padding: 6;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 100px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-section {
-    padding: 160px;
-    margin: 80px;
-    background-color: lightseagreen;
-    box-shadow: 0 4px 80px black (0, 0, 0, 0.1);
-    font-size: 20px;
-    
-}
-
-h1, h2 {
-    font-family: 'Optima', monospace;
-    color: white;
-    text-align: center;
-}
-
-h2 {
-    margin-top: 0;
-}
-
-ul {
-    list-style-type: lower-roman;
-    margin-left: 20px;
-}
-
-footer {
-    background-color: black;
-    color: #fff;
+    background-image: url('background.gif');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(247, 247, 247, 0.8);
+    color: #333;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: rgb(247, 247, 247);
     padding: 20px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  h1 {
+    font-size: 42px;
+    margin: 0;
+    color: #555;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #888;
+  }
+  
+  /* Section Styles */
+  section {
+    margin: 20px;
+    margin-bottom: 80px;
+    padding: 40px;
+    background-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  section h2 {
+    font-size: 32px;
+    margin: 0 0 20px;
+    color: #555;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  section p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #777;
+  }
+  
+  section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  section ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Contact Section Styles */
+  #contact {
+    background-color: #f2f7fc;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  #contact h2 {
+    font-size: 32px;
+    color: #555;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  #contact p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #f7f7f7;
+    color: #555;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Image Styles */
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
 }
+
+.content h1{
+  font-size: 70px;
+  margin-top: 80px;
+}
+
+.content h1 div {
+  color: red;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.content p{
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
+  font-size: 20px;
+}
+  
+button{
+    width: 200px;
+
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #6f1b74;
+    background: transparent;
+    color: #1c1b1b;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+
+span{
+  background: #ad1d9c;
+  height: 100%;
+  width: 0%;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  transition: 0.5s;
+}
+button:hover span{
+  width: 100%;
+}
+
+.flex {
+  display:flex;
+  }
+.flex div {
+  flex:1;
+  margin:5px; /* need some space ?*/
+  }
+img {
+  width:100%;
+  }
