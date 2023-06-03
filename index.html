@@ -139,5 +139,60 @@
     <footer>
         <p>Все права защищены &copy; 2023 PSYCHOSU.net</p>
     </footer>
+                  <style>
+    .smiley {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: 0;
+      top: 0;
+      animation: moveSmiley 5s infinite;
+    }
+
+    @keyframes moveSmiley {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(200px, 0);
+      }
+      50% {
+        transform: translate(200px, 200px);
+      }
+      75% {
+        transform: translate(0, 200px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="smiley">&#9786;</div>
+  
+  <script>
+    // Function to generate a random number between min and max (inclusive)
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    
+    // Function to set random position for the smiley face
+    function setRandomPosition() {
+      var smiley = document.querySelector('.smiley');
+      var screenWidth = window.innerWidth - smiley.clientWidth;
+      var screenHeight = window.innerHeight - smiley.clientHeight;
+      var randomLeft = getRandomNumber(0, screenWidth);
+      var randomTop = getRandomNumber(0, screenHeight);
+      smiley.style.left = randomLeft + 'px';
+      smiley.style.top = randomTop + 'px';
+    }
+    
+    // Set initial random position for the smiley face
+    setRandomPosition();
+    
+    // Update position on window resize
+    window.addEventListener('resize', setRandomPosition);
+  </script>
 </body>
 </html>
